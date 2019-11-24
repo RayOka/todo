@@ -6,6 +6,7 @@ use App\Http\Requests\CreateTask;
 use Carbon\Carbon;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Support\Facades\Schema;
 use Tests\TestCase;
 
 class TaskTest extends TestCase
@@ -23,7 +24,7 @@ class TaskTest extends TestCase
         // テストケース実行前にフォルダデータを作成する
         $this->seed('FoldersTableSeeder');
     }
-     
+
     /**
      * 期限日が日付ではない場合にバリデーションエラー
      * @test
@@ -54,5 +55,28 @@ class TaskTest extends TestCase
         $response->assertSessionHasErrors([
             'due_date' => '期限日 には今日以降の日付を入力してください。',
         ]);
+    }
+
+    /**
+     * 状態が定義されて値でない場合はバリデーションエラー
+     * @test
+     */
+    public function status_should_be_within_defined_numbers()
+    {
+        Schema::disableForeignKeyConstraints();
+
+        $this->seed('TasksTableSeeder');
+
+        $response = $this->post('/folders/1/tasks/1/edit', [
+            'title' => 'Sample taks',
+            'due_date' => Carbon::today()->format('Y/m/d'),
+            'status' => 999,
+        ]);
+
+        $response->assertSessionHasErrors([
+            'status' => '状態 には未着手、着手中、完了 のいずれかを指定してください。',
+        ]);
+
+        Schema::enableForeignKeyConstraints();
     }
 }
