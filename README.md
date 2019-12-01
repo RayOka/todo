@@ -14,7 +14,9 @@ URL:http://todoappray.herokuapp.com
 タスクの名前、状態、期限日はタスク一覧の編集から変更することができる。
 
 ## Demo
+フォルダーの作成
 
+https://github.com/raygituser/todo/blob/images/createFolder.png
 
 ## License
 
