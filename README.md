@@ -4,8 +4,8 @@ ToDoリストをフォルダごと管理することができるアプリ
 
 URL:http://todoappray.herokuapp.com
 
-## Description
-フォルダを作成し、そのフォルダごとにタスクを作りタスクごとの進捗度を`未着手`,`着手中`,`完了`
+## 説明
+使用にはユーザー登録が必要で、ユーザーごとにフォルダを作成し、そのフォルダごとにタスクを作りタスクごとの進捗度を`未着手`,`着手中`,`完了`
 の3つの状態で管理する。
 
 タスクは作成時にタスクの名前と期限日を設定して作成する。
@@ -13,11 +13,58 @@ URL:http://todoappray.herokuapp.com
 
 タスクの名前、状態、期限日はタスク一覧の編集から変更することができる。
 
-## Demo
+作成したユーザーのパスワードを忘れてしまった場合には登録したメールアドレスにパスワードのリセットメールが送信され、送られてきたリンクからパスワードの変更ができる。
+
+## スクリーンショット
 フォルダーの作成
 
-https://github.com/raygituser/todo/blob/images/createFolder.png
+![フォルダー作成](https://github.com/raygituser/todo/blob/images/createFolder.png)
 
-## License
+![インデックス](https://github.com/raygituser/todo/blob/images/indexView.png)
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+タスクの作成
+![タスクの作成](https://github.com/raygituser/todo/blob/images/createTask.png)
+
+タスクの編集
+![タスクの編集](https://github.com/raygituser/todo/blob/images/editTask.png)
+
+![編集後のインデックス](https://github.com/raygituser/todo/blob/images/afterEditTask.png)
+
+## アプリケーション作成の動機
+私がこのアプリケーションを作成しようと思ったきっかけは、アルバイト先でPHPのフレームワークであるLaravelを使った開発を行うことが決まったので、その勉強ついでにデプロイまで行なってみようと思ったのがきっかけです。
+また、それ以外にも1からアプリケーションを作成したことがあまりなかったので基本的な開発手順の学習にもなると思いました。
+
+そして、ToDoアプリにした理由としましては、最近、大学での研究、講義、TAやアルバイト、就職活動といったやることがたくさんあり、やるべきことをリスト化して管理する必要があると思ったのが主な理由です。(作成難易度的にもちょうど良いと思ったので）
+また、作成するにあたってこちらの[入門Laravelチュートリアル](https://www.hypertextcandy.com/laravel-tutorial-introduction)に倣って作成しました。基本的にはこのサイトに書いてあることに準拠して進めましたが、データベースの設計やコントローラーなどの処理の書き方はただ書き写すのではなく、一度自分で考えてからサイトを参考にすることで効率的に学習を進めることができたと思います。
+
+## 勉強になったこと
+#### Laravelの基本的な使い方
+* モデル、ビュー、コントローラーの作りかた
+* artisanコマンドの使い方
+* migrationの作成手順
+* ルーティング設定
+* テストの方法
+* ユーザー認証機
+* バリデーションの方法
+
+#### ユーザー関連
+* トークンの使いかた
+* メールを使ったパスワード変更
+
+#### herokuの使い方
+* データベースの設定
+* デプロイの方法
+
+## 感想
+PHPのフレームワークであるLaravelを使って使ってみて思ったことは、**とにかく便利**だと感じました。その便利さを象徴するのがArtisanコマンドだと思います。
+Artisanコマンドで設定や更新などが簡単に行えるのが便利に感じました。今回のアプリケーションのような小規模のものならArrisanコマンドを使ってコードを少し書いていくだけで作成することができます。また、私はLaravel以前にCakePHPを使用したことがありますが、そちらと比較すると制約が少ないので自由度も高いし、学習コストも低いように感じました。
+
+個人的にはLaravelの方がCakePHPよりも使いやすく感じたので、次回は中規模のアプリケーションをLaravelを使って作成したいと思いました。
+
+
+
+
+
+
+
+
