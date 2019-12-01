@@ -4,7 +4,7 @@ ToDoリストをフォルダごと管理することができるアプリ
 
 URL:http://todoappray.herokuapp.com
 
-## 説明
+## Description
 フォルダを作成し、そのフォルダごとにタスクを作りタスクごとの進捗度を`未着手`,`着手中`,`完了`
 の3つの状態で管理する。
 
@@ -12,6 +12,9 @@ URL:http://todoappray.herokuapp.com
 その時、進捗度は未着手の状態で作成される。
 
 タスクの名前、状態、期限日はタスク一覧の編集から変更することができる。
+
+## Demo
+
 
 ## License
 
